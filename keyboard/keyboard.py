@@ -62,7 +62,7 @@ if __name__=="__main__":
         while(1):
 
             key = getKey()
-
+            point = Point()
             if(key=='w'):
                 z = z +1 
             if(key=='s'):
@@ -76,17 +76,15 @@ if __name__=="__main__":
             if(key=='e'):
                 x = x -1    
             if(key == '\x03'):
-                    break
+                break
 	    print("X=",x ," Y=",y ," Z=",z)
 
+	    point.x = x
+	    point.z = z
+	    point.y = y        
+            pub.publish(point)     
                      
-        point = Point()
-	
-	print(x)
-
-        point.x = x;point.y=y;point.z=z;
-        
-        pub.publish(point)     
+   
 
     except Exception as e:
         print(e)
