@@ -91,5 +91,5 @@ if __name__=="__main__":
 
     finally:
         point = Point()
-        point.x = a; point.linear.y = b; point.linear.z = c
+        point.x = a; point.y = b; point.z = c
         termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)
